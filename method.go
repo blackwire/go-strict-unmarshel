@@ -1,3 +1,9 @@
+package Example
+
+import (
+    "common"	
+)
+
 // Example is a test struct that explains how to use the method below
 type Example struct {
     Field string `json:"field_name"`
@@ -11,6 +17,13 @@ func (e *Example) UnmarshalJSON(data []byte) error {
 // ---------------------------------------------------------------------------
 // the below should be added to some common package that is imported
 // ---------------------------------------------------------------------------
+
+import (
+    "encoding/json"
+    "fmt"
+    "reflect"
+    "strings"
+)
 
 // StrictUnmarshal enforces unmarshal in a way that overwrites the original data should it exist
 func StrictUnmarshal(s interface{}, data []byte) error {
